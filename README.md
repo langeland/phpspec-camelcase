@@ -1,0 +1,2 @@
+# PHPSpec camelCase extension
+

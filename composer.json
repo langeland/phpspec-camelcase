@@ -1,0 +1,18 @@
+{
+    "name": "langeland/phpspec-camelcase",
+    "description": "PHPSpec extension that allows you to use camelcase methods for tests.",
+    "type": "library",
+    "license": "MIT", 
+    "authors": [
+        {
+            "name": "Jon Klixbüll Langeland",
+            "email": "jon@klixbull.org"
+        }
+    ],
+    "require": {
+        "php": ">= 5.6"
+    },
+    "autoload": {
+        "psr-4": { "Langeland\\PhpspecCamelCase\\": "src"}
+    }
+}
