@@ -27,12 +27,7 @@ class PhpspecCamelCaseListener implements EventSubscriberInterface
         $spec = $specificationEvent->getSpecification();
 
         foreach ($spec->getClassReflection()->getMethods() as $method) {
-
-            if (preg_match('/^(it|its)[^a-zA-Z]/', $method->getName())) {
-                continue;
-            }
-
-            if (!$this->endsWith($method->getName(), 'Example')) {
+            if (preg_match('/^(it|its)[a-zA-Z]+$/', $method->getName()) === 0) {
                 continue;
             }
 
@@ -43,16 +38,6 @@ class PhpspecCamelCaseListener implements EventSubscriberInterface
                 )
             );
         }
-    }
-
-
-    function endsWith($string, $endString)
-    {
-        $len = strlen($endString);
-        if ($len == 0) {
-            return true;
-        }
-        return (substr($string, -$len) === $endString);
     }
 
     /**
